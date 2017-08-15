@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册内部图资源视解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/Jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!-- 配置Handle,映射"/hello"请求 -->
+    <bean id="/mys2.do" class="com.jack.king.fu.controller.s2.MyController2"/>
+</beans>
