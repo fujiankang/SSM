@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册映射器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+         <props>
+             <prop key="/my.do">myController</prop>
+         </props>
+        </property>
+    </bean>
+    <!--注册方法名称解析器-->
+    <bean id="parameterMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <!--若不指定paramName，默认值是action-->
+        <!--<property name="paramName" value="xxx"/>-->
+    </bean>
+    <!-- 配置Handle,映射"/hello"请求,设定请求方式，注意大小写 -->
+    <bean id="myController" class="com.jack.king.fu.controller.s9.MyController">
+        <property name="methodNameResolver" ref="parameterMethodNameResolver"/>
+    </bean>
+</beans>
