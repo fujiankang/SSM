@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册映射器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+         <props>
+             <prop key="/my_*.do">myController</prop>
+         </props>
+        </property>
+    </bean>
+    <!--注册方法名称解析器-->
+    <bean id="propertiesMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+        <property name="mappings">
+            <props>
+                <prop key="/my_first.do">doFirst</prop>
+                <prop key="/my_second.do">doSecond</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- 配置Handle,映射"/hello"请求,设定请求方式，注意大小写 -->
+    <bean id="myController" class="com.jack.king.fu.controller.s9.MyController">
+        <property name="methodNameResolver" ref="propertiesMethodNameResolver"/>
+    </bean>
+</beans>
