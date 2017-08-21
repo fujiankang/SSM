@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--注册处理映射器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/hello">myController</prop>
+                <prop key="/hello2">myController</prop>
+                <prop key="/hello3">myController</prop>
+            </props>
+        </property>
+    </bean>
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/hello" value="myController"/>
+                <entry key="/hello2" value="myController"/>
+                <entry key="/hello3" value="myController"/>
+            </map>
+        </property>
+    </bean>
+    <!--注册处理器-->
+    <bean id="myController" class="com.jack.king.fu.controller.s1.MyController"/>
+
+</beans>
