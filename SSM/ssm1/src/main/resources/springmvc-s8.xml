@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--MultiActionController类具有一个属性：methodNameResolver（方法名解析器）
+    其具有默认值  new InternalPathMethodNameResolver();
+    该解析器将方法名作为资源进行解析，那就意味着，我们提交请求时，要将方法名作为资源名称出现。
+    -->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+         <props>
+            <!--<prop key="/my/doFirst">myController</prop>-->
+            <!--<prop key="/my/doSecond">myController</prop>-->
+             <prop key="/my/*.do">myController</prop>
+         </props>
+        </property>
+    </bean>
+    <!-- 配置Handle,映射"/hello"请求,设定请求方式，注意大小写 -->
+    <bean id="myController" class="com.jack.king.fu.controller.s8.MyController"/>
+</beans>
