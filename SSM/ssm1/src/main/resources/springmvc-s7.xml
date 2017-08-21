@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 配置Handle,映射"/hello"请求,设定请求方式，注意大小写 -->
+    <bean id="/my.do" class="com.jack.king.fu.controller.s7.MyController">
+        <property name="supportedMethods" value="POST"/>
+    </bean>
+</beans>
