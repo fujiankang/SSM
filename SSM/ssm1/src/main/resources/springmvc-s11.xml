@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--定义一个内部资源视图-->
+    <bean id="internalResource" class="org.springframework.web.servlet.view.JstlView">
+        <property name="url" value="/WEB-INF/Jsp/welcome.jsp"/>
+    </bean>
+    <!--定义一个外部资源视图-->
+    <bean id="tb" class="org.springframework.web.servlet.view.RedirectView">
+        <property name="url" value="http://www.taobao.com"/>
+    </bean>
+
+    <!--定义一个外部资源视图-->
+    <bean id="jd" class="org.springframework.web.servlet.view.RedirectView">
+        <property name="url" value="http://www.jd.com"/>
+    </bean>
+
+    <!--视图解析器-->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+
+    <!-- 注册处理器 -->
+    <bean id="/my.do" class="com.jack.king.fu.controller.s11.MyController"/>
+</beans>
