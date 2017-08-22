@@ -8,7 +8,7 @@
         <property name="url" value="/WEB-INF/Jsp/welcome.jsp"/>
     </bean>
     <!--定义一个外部资源视图-->
-    <bean id="tb" class="org.springframework.web.servlet.view.RedirectView">
+    <bean id="taobao" class="org.springframework.web.servlet.view.RedirectView">
         <property name="url" value="http://www.taobao.com"/>
     </bean>
 
@@ -16,8 +16,7 @@
     <bean id="jd" class="org.springframework.web.servlet.view.RedirectView">
         <property name="url" value="http://www.jd.com"/>
     </bean>
-
-    <!--视图解析器-->
+    <!--BeanName视图解析器-->
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
 
     <!-- 注册处理器 -->
