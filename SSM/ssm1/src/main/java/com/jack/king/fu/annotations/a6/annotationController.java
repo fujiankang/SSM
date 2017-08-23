@@ -14,7 +14,7 @@ public class annotationController {
 
     @RequestMapping("/register.do")
     public ModelAndView doFirst(Student student)  {
-        logger.info("逐个参数的接收"+"姓名："+student.getName()+"年龄："+student.getAge());
+        logger.info("整体以对象形式"+"姓名："+student.getName()+"年龄："+student.getAge());
         ModelAndView mv=new ModelAndView();
         mv.addObject("student",student);
         mv.setViewName("/WEB-INF/Jsp/welcome.jsp");
