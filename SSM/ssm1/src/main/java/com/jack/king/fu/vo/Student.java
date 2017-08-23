@@ -3,6 +3,15 @@ package com.jack.king.fu.vo;
 public class Student {
     private String name;
     private int age;
+    private School school;
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
 
     public String getName() {
         return name;
@@ -25,6 +34,7 @@ public class Student {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", school=" + school +
                 '}';
     }
 }
