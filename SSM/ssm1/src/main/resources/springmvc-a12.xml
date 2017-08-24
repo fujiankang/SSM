@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <!--注册组件扫描器-->
+    <!--注册组件扫描器Ajax-->
     <context:component-scan base-package="com.jack.king.fu.annotations.a12"/>
 
 </beans>

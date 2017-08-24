@@ -17,7 +17,7 @@ public class annotationController {
     public static org.apache.logging.log4j.Logger logger = LogManager.getLogger();
     @RequestMapping("/ajax.do")
     public void doAjax(String name, int age, HttpServletResponse rsp) throws IOException {
-        logger.info("Ajax请求到达======");
+        logger.info("Ajax请求到达========");
         Map<String,Object> map=new HashMap<String, Object>();
         map.put("name",name);
         map.put("age",age);
