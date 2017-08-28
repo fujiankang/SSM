@@ -1,4 +1,6 @@
-package com.jack.king.fu.annotations.a22.exceplass;
+package com.jack.king.fu.annotations.a22.customresolver;
+import com.jack.king.fu.annotations.a22.exceplass.AgeException;
+import com.jack.king.fu.annotations.a22.exceplass.NameException;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +13,7 @@ public class MyExcetionResolver implements HandlerExceptionResolver {
         mv.addObject("ex",ex);
         mv.setViewName("/error/error.jsp");
         if (ex instanceof NameException){
-            System.out.println("执行姓名不合法操作");
+            System.out.println("执行姓名不合法操作行为");
             mv.setViewName("/error/nameerror.jsp");
         }
         if (ex instanceof AgeException){
