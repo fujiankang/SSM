@@ -12,7 +12,7 @@ public class ConverterController {
     public static org.apache.logging.log4j.Logger logger = LogManager.getLogger();
     @RequestMapping("/cc3.do")
     public ModelAndView ConverterCustom(int week, Date date)  {
-        logger.info("类型转换器,参数异常不能正确接收和转换");
+        logger.info("类型转换器,参数异常时候");
         logger.error("周数"+week);
         logger.error("日期"+date);
         ModelAndView mv=new ModelAndView();
