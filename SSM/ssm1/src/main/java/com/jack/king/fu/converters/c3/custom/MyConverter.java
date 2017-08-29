@@ -1,5 +1,4 @@
 package com.jack.king.fu.converters.c3.custom;
-
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.core.convert.converter.Converter;
 import java.text.ParseException;
@@ -33,7 +32,7 @@ public class MyConverter implements Converter<String, Date> {
         } else if (Pattern.matches("^\\d{4}\\d{2}\\d{2}$", s)) {
             sdf = new SimpleDateFormat("yyyyMMdd");
         }else {
-            throw new TypeMismatchException(s,Date.class);
+            throw new TypeMismatchException("",Date.class);
         }
         return sdf;
     }
